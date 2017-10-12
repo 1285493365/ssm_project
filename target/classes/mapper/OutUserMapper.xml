@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lin.dao.OutUserDao">
+<resultMap id="BaseResultMap" type="com.lin.domain.OutUser">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="out_user_code" property="outUserCode" jdbcType="VARCHAR" />
+		<result column="out_deptment_id" property="outDeptmentId" jdbcType="INTEGER" />
+		<result column="corp_id" property="corpId" jdbcType="VARCHAR" />
+	</resultMap>
+	<!-- 查询单条记录 -->
+	<select id="selectOutUserById" parameterType="int" resultMap="BaseResultMap">
+		SELECT * FROM out_user WHERE id = #{id}
+	</select>
+	    <insert id="saveOrUpdateOutUser" useGeneratedKeys="true" keyProperty="id">
+        insert into out_user (
+                out_user_code,
+                out_deptment_id,
+                corp_id
+        )values(
+                #{outUserCode},
+                #{outDeptmentId},
+                #{corpId}
+        )ON DUPLICATE KEY UPDATE out_user_code=#{outUserCode},out_deptment_id=#{outDeptmentId},corp_id=#{corpId}
+    </insert>
+	
+</mapper>

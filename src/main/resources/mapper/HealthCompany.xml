@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lin.dao.HealthCompanyDao">
+<resultMap id="BaseResultMap" type="com.lin.domain.HealthCompany">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="company_type" property="companyType" jdbcType="INTEGER" />
+		<result column="corp_id" property="corpId" jdbcType="VARCHAR" />
+	</resultMap>
+	<!-- 查询单条记录 -->
+	<select id="selectHealthCompanyById" parameterType="int" resultMap="BaseResultMap">
+		SELECT * FROM health_company WHERE id = #{id}
+	</select>
+	<select id="selectHealthCompanyByCorpId" parameterType="string" resultMap="BaseResultMap">
+		SELECT * FROM health_company WHERE corp_id = #{corpId}
+	</select>
+	    <insert id="saveOrUpdateHealthCompany" useGeneratedKeys="true" keyProperty="id">
+        insert into health_company (
+                name,
+                company_type,
+                corp_id
+        )values(
+                #{name},
+                #{companyType},
+                #{corpId}
+        )ON DUPLICATE KEY UPDATE name=#{name},company_type=#{companyType},corp_id=#{corpId}
+    </insert>
+	
+</mapper>
