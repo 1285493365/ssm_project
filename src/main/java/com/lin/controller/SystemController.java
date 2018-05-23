@@ -50,7 +50,7 @@ public class SystemController {
 		String tel = callbackMsgJson.getString("tel");
 		String outDeptId = "-1";
 		
-		
+		//string tt= "";
 		List<String> listUsers = JSON.parseObject(userId,ArrayList.class);
 		if(listUsers!=null)
 			userId = listUsers.get(0);
