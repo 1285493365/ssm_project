@@ -12,7 +12,14 @@ public class HealthUser {
 	private Integer departmentId;
 	private Integer isDelete;
 	private String outDepartmentIds;
+	private String staffId;
 	
+	public String getStaffId() {
+		return staffId;
+	}
+	public void setStaffId(String staffId) {
+		this.staffId = staffId;
+	}
 	public String getOutDepartmentIds() {
 		return outDepartmentIds;
 	}
@@ -93,6 +100,7 @@ public class HealthUser {
 				+ ", expireTime=\'" + expireTime + "\'"
 				+ ", departmentId=" + departmentId 
 				+ ", isDelete=" + isDelete
+				+ ", staffId=\'" + staffId + "\'"
 				+ "]";
 	}
 	

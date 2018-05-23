@@ -28,12 +28,13 @@ public class HealthDepartmentServiceTest extends SpringTestCase {
 	@Test
 	public void saveOrUpdateHealthDepartment(){
 		HealthDepartment healthDepartment = new HealthDepartment();
+		//healthDepartment.setId(2);
 		healthDepartment.setCompanyId(1);
 		healthDepartment.setName("X");
 		healthDepartment.setHeadImg("/1/1.jpg");
 		healthDepartment.setBgImg("/1/1.jpg");
 		healthDepartment.setOutDeptId("XXX");
-		//healthDepartmentService.saveOrUpdateHealthDepartment(healthDepartment);
+		healthDepartmentService.saveOrUpdateHealthDepartment(healthDepartment);
 		logger.debug("插入结果" + healthDepartment);
 	}
 }

@@ -23,12 +23,13 @@ public class HealthUserServiceTest extends SpringTestCase {
 	@Test
 	public void saveOrUpdateHealthUser(){
 		HealthUser healthUser = new HealthUser();
-		healthUser.setUname("cc");
+		healthUser.setUname("测试");
 		healthUser.setPwd("e10adc3949ba59abbe56e057f20f883e");
-		healthUser.setTel("18721978583");
+		healthUser.setTel("18721978589");
 		healthUser.setDepartmentId(1);
 		healthUser.setIsDelete(0);
 		healthUser.setOutDepartmentIds("[1,2]");
+		healthUser.setStaffId("02393");
 		healthUserService.saveOrUpdateHealthUser(healthUser);
 		logger.debug("插入结果：" + healthUser);
 	}

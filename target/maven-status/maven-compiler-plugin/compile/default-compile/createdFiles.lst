@@ -1,12 +1,8 @@
-com\lin\dao\UserDao.class
 com\lin\domain\HealthCompany.class
 com\lin\dao\HealthCompanyDao.class
 com\lin\controller\SystemController.class
-com\lin\service\UserService.class
 com\lin\service\HealthCompanyService.class
 com\lin\domain\HealthDepartment.class
-com\lin\controller\UserController.class
-com\lin\service\UserServiceImpl.class
 com\lin\dao\OutUserDao.class
 com\lin\service\OutUserService.class
 com\lin\dao\HealthUserDao.class
@@ -19,7 +15,6 @@ com\lin\domain\OutUser.class
 com\lin\service\OutCorpService.class
 com\lin\domain\HealthUser.class
 com\lin\domain\OutCorp.class
-com\lin\domain\User.class
 com\lin\service\OutUserCorpImpl.class
 com\lin\service\OutUserServiceImpl.class
 com\lin\service\HealthUserServiceImpl.class

@@ -19,12 +19,14 @@
 	</select>	
 	    <insert id="saveOrUpdateHealthDepartment" useGeneratedKeys="true" keyProperty="id">
         insert into health_department (
+        		id,
         		company_id,
                 name,
                 head_img,
                 bg_img,
                 out_dept_id
         )values(
+        		#{id},
         		#{companyId},
                 #{name},
                 #{headImg},

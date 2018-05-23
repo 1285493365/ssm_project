@@ -14,6 +14,7 @@
 		<result column="department_id" property="departmentId" jdbcType="INTEGER" />
 		<result column="is_delete" property="isDelete" jdbcType="INTEGER" />
 		<result column="out_department_ids" property="outDepartmentIds" jdbcType="VARCHAR" />
+		<result column="staff_id" property="staffId" jdbcType="VARCHAR" />
 	</resultMap>
 	<!-- 查询单条记录 -->
 	<select id="selectHealthUserById" parameterType="int" resultMap="BaseResultMap">
@@ -30,7 +31,8 @@
                 expire_time,
                 department_id,
                 is_delete,
-                out_department_ids
+                out_department_ids,
+                staff_id
         )values(
         		#{uname},
                 #{pwd},
@@ -41,8 +43,9 @@
                 #{expireTime},
                 #{departmentId},
                 #{isDelete},
-                #{outDepartmentIds}
-        )ON DUPLICATE KEY UPDATE uname=#{uname},pwd=#{pwd},tel=#{tel},head_img=#{headImg},last_login_ip=#{lastLoginIp},last_login_time=#{lastLoginTime},expire_time=#{expireTime},department_id=#{departmentId},is_delete=#{isDelete},out_department_ids=#{outDepartmentIds}
+                #{outDepartmentIds},
+                #{staffId}
+        )ON DUPLICATE KEY UPDATE uname=#{uname},pwd=#{pwd},tel=#{tel},head_img=#{headImg},last_login_ip=#{lastLoginIp},last_login_time=#{lastLoginTime},expire_time=#{expireTime},department_id=#{departmentId},is_delete=#{isDelete},out_department_ids=#{outDepartmentIds},staff_id=#{staffId}
     </insert>
 	
 </mapper>
